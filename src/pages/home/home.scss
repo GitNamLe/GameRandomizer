@@ -1,3 +1,18 @@
 page-home {
 
 }
+
+ion-toolbar .toolbar-background {
+    background: transparent;
+}
+
+ion-content .scroll-content {
+    margin-top:0px !important;
+    overflow-y: hidden;
+}
+
+.pages-background {
+    background-image: url('../images/beer2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

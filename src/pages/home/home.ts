@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController, PopoverController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,22 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(private modalCtrl: ModalController, private popoverCtrl: PopoverController) {
 
   }
 
+  onOpenSettings(event){
+    let popover = this.popoverCtrl.create('PopoverPage');
+    popover.present({
+      ev: event
+    });
+  }
+
+  onOpenGames(){
+    const modal = this.modalCtrl.create('GameModalPage');
+    modal.present();
+    modal.onDidDismiss(data => {
+      console.log(data);
+    })
+  }
 }
